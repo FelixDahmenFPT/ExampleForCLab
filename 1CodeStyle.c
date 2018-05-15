@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int a;//BAD as it is a global Variable with not meaningful name
 
 int counter; //this is a counter
@@ -9,11 +12,13 @@ int main(int argc, char** argv) {
     cou
     //Auto Format
     // ctrl+shift+F
-    if(a==5){
-    dosth()    
-    }
-    //Code Formating 
+    if (a == 5) {
+        dosth()
+    } 
     
+    //Code Formating 
+    //<right click on Project> -> properties -> formating
+    //Tools -> Options -> Editor -> Formatting
     
     //Don't define Variable outside of used scope
     int i;
@@ -114,21 +119,21 @@ int main(int argc, char** argv) {
     //correct check for boolean values
     /* invalid */
     if (found == TRUE)
-	do_foo ();
+    do_foo ();
     
     /* valid */
     if (found)
-	do_foo ();
+    do_foo ();
     
     //C language uses the value 0 for many purposes. 
     //As a numeric value, the end of a string, a null pointer and the FALSE boolean
     /* invalid */
     if (!number)
-	do_foo ();
+    do_foo ();
     
     /* valid */
     if (number == 0)
-	do_foo ();
+    do_foo ();
     
     
     //https://developer.gnome.org/programming-guidelines/stable/c-coding-style.html.en
@@ -137,3 +142,4 @@ int main(int argc, char** argv) {
     
     return (EXIT_SUCCESS);
 }
+
