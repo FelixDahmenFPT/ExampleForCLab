@@ -1,26 +1,33 @@
- #include <stdio.h>
-#include <stdlib.h>
 
+
+// name global and comment
+/*invalid*/
 int a;//BAD as it is a global Variable with not meaningful name
-
+/* valid */
 int counter; //this is a counter
              //better as we comment and meaningful name
 
-int main(int argc, char** argv) {
-    //code completion 
-   // ctrl+space
-    cou
-    //Auto Format
+/*Auto Format in Netbeans*/
+// don't trust the Autoformat 100%
     // ctrl+shift+F
     if (a == 5) {
         dosth()
     } 
     
-    //Code Formating 
-    //<right click on Project> -> properties -> formating
-    //Tools -> Options -> Editor -> Formatting
+//Code Formating 
+//<right click on Project> -> properties -> formating
+//Tools -> Options -> Editor -> Formatting
+
+/* Code Completion */
+//type first letters 
+// press ctrl+space
+
+
+int main(int argc, char** argv) {
     
-    //Don't define Variable outside of used scope
+    //define Variable as close as possible to their use
+    //don't define them outside of their used scope
+    /*invalid*/
     int i;
     for(i=0;i<5;i++){
         //DO STH
@@ -29,7 +36,7 @@ int main(int argc, char** argv) {
         //DO STH ELSE
     }
     
-    //BETTER 
+    /* valid */
     for(int i=0;i<5;i++){
         //DO STH
     }
@@ -37,7 +44,7 @@ int main(int argc, char** argv) {
         //DO STH ELSE
     }
     
-    //also possible 
+    /* also valid */ 
     {
         int i;
         for(i=0;i<5;i++){
@@ -45,15 +52,21 @@ int main(int argc, char** argv) {
         }
         printf("%d",i);
     }
+
     //do not try to fit statements in one line
     /* invalid */
     if (condition) foo (); else bar ();
+    
     /* valid */
     if (condition) 
         foo (); 
     else 
         bar ();
+    
+
     //indention
+    //use indention to clarify your program
+    /* valid */
     statement_1 ();
     statement_2 ();
     {
@@ -64,17 +77,16 @@ int main(int argc, char** argv) {
 
             retval = res ? -1 : 1;
     }
-    
-    //WRONG
+   
+   /* invalid */
     if(4==3){
     if(5==6){
-
+        //Do STH
     }}else{
-
+        //Do STH ELSE
     }
-    
-    
-    //good indention  
+    // indention styles
+    /* valid */  
     //K&R
     if(4==3){
         if(5==6){
@@ -83,7 +95,8 @@ int main(int argc, char** argv) {
     }else{
         
     }
-    //or
+
+    /* valid */
     //Allman
     if(4==3)
     {
@@ -99,7 +112,19 @@ int main(int argc, char** argv) {
     
     
     //use of brakets is better style in certain cases
-    /* valid GNU style */
+    /* invalid */
+    if(condition){
+        dosth();
+    }else{
+        dosthelse();
+    }
+
+    /* invalid */
+    {
+        dosth();
+    }
+
+    /* valid */
     if (condition){
         foo ();
         bar ();
@@ -107,17 +132,19 @@ int main(int argc, char** argv) {
         baz ();
     }
     
-    
-        /* valid Linux kernel style */
+    /* valid */
     if (condition1 ||
         (condition2 && condition3) ||
         condition4 ||
         (condition5 && (condition6 || condition7))) {
-            a_single_statement ();
+            //DO STH
+    }else{
+        //DO STH ELSE
     }
     
     //correct check for boolean values
     /* invalid */
+    bool found = TRUE;
     if (found == TRUE)
     do_foo ();
     
@@ -128,6 +155,8 @@ int main(int argc, char** argv) {
     //C language uses the value 0 for many purposes. 
     //As a numeric value, the end of a string, a null pointer and the FALSE boolean
     /* invalid */
+    int number=0;
+
     if (!number)
     do_foo ();
     
@@ -135,11 +164,11 @@ int main(int argc, char** argv) {
     if (number == 0)
     do_foo ();
     
-    
+    /* Recommended sources */
+    // short summary
     //https://developer.gnome.org/programming-guidelines/stable/c-coding-style.html.en
+    
+    // deeper knowledge
     //http://homepages.inf.ed.ac.uk/dts/pm/Papers/nasa-c-style.pdf
     
-    
-    return (EXIT_SUCCESS);
-}
 
