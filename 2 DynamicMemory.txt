@@ -1,0 +1,30 @@
+// dynamic memory allocation
+
+// array with fixed size
+/* valid */
+int array[100];
+
+/* invalid */
+// not verified that every compiler support that
+int n=10;
+int array2[n];
+
+// dynamic memory
+// <stdlib.h>
+
+void * malloc(size_t);
+/* valid */
+int n=10;
+int *array2=(int *)malloc(n*sizeof(int));
+
+void * calloc(NUMBER_ELEMENTS, SIZE_ELEMENT);
+//initialises memory to zero
+/* valid */
+int n=10;
+int *array2=(int *)calloc(n,sizeof(int));
+
+//INFO! you can use pointer as an array
+array2[2]=9;
+
+//every memory which is allocated dynamicly has to be freed
+free(array2);
